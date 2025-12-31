@@ -198,7 +198,7 @@ for b in b_values:
 
 ---
 
-## 📖 Citation
+<!-- ## 📖 Citation
 
 If you use this code in your research, please cite:
 
@@ -210,7 +210,7 @@ If you use this code in your research, please cite:
   year={2025},
   doi={[DOI]}
 }
-```
+``` -->
 
 ---
 
@@ -218,11 +218,7 @@ If you use this code in your research, please cite:
 
 1. Moran, P. A. P. (1958). Random processes in genetics. *Mathematical Proceedings of the Cambridge Philosophical Society*, 54(1), 60-71.
 
-2. Nowak, M. A., Tarnita, C. E., & Antal, T. (2010). Evolutionary dynamics in structured populations. *Philosophical Transactions of the Royal Society B*, 365(1537), 19-30.
-
-3. Allen, B., et al. (2017). Evolutionary dynamics on any population structure. *Nature*, 544(7649), 227-230.
-
-4. Gómez-Gardeñes, J., et al. (2012). Evolution of cooperation in multiplex networks. *Scientific Reports*, 2, 620.
+2. https://github.com/qisu1991/MultilayerPopulations
 
 ---
 
@@ -232,7 +228,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🤝 Contributing
+<!-- ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -242,7 +238,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
----
+--- -->
 
 ## 📧 Contact
 
