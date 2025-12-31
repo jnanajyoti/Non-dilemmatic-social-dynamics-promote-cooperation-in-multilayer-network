@@ -1,7 +1,5 @@
-# Non-dilemmatic-social-dynamics-promote-cooperation-in-multilayer-network
-Code associated with Non-dilemmatic social dynamics promote cooperation in multilayer network 
 # Non-dilemmatic Social Dynamics Promote Cooperation in Multilayer Networks
-
+Code associated with Non-dilemmatic social dynamics promote cooperation in multilayer network 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)](https://jupyter.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
