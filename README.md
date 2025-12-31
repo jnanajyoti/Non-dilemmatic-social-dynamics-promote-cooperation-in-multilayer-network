@@ -123,9 +123,8 @@ results = simulate_multilayer_db(G1, G2, b, r, delta, num_runs)
 
 ---
 
-## 📊 Key Results
+## 📊 Results
 
-### Phase Diagrams
 
 The heatmaps show selection outcomes across the $(b/c, r)$ parameter space:
 
