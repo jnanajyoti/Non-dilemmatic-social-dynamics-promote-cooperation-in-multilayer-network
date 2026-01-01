@@ -37,6 +37,10 @@ where $\delta$ is the selection intensity and $b/c$ is the benefit-to-cost ratio
 ├── README.md                    # This file
 ├── multilayer_egt.ipynb         # Main analysis: fixation probabilities & phase diagrams
 ├── Fixation_Time.ipynb          # Fixation time simulations
+└── Random Graphs/            # Random Graphs
+    ├── Random_graphs.ipynb       # Code for analysing random graphs
+    ├── Figures_Random_graphs.ipynb       # Code for plotting random graphs figures
+    └── *.png, *.pdf             # Publication figures
 └── Figures and Data/            # Generated figures and precomputed data
     ├── heatmap*_dB_dB.npz       # Heatmap data for dB-dB update rule
     ├── heatmap*_dB_Bd.npz       # Heatmap data for dB-Bd update rule
