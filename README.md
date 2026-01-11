@@ -14,13 +14,13 @@ Preprint arXiv:2601.00460](https://arxiv.org/abs/2601.00460):
 
 ## 📋 Overview
 
-We study evolutionary dynamics on **multilayer networks** where individuals participate in two coupled processes:
+We study evolutionary dynamics on multilayer networks where individuals participate in two coupled processes:
 
 1. **Game Layer**: A social dilemma (donation game) where cooperators pay a cost to benefit others
 2. **Constant Selection Layer**: A non-dilemmatic process where types differ in reproductive fitness
 
 
-### Model Summary
+### Model summary
 
 | Layer | Strategies | Payoff Structure |
 |-------|-----------|------------------|
@@ -53,7 +53,7 @@ where $\delta$ is the selection intensity and $b/c$ is the benefit-to-cost ratio
 
 ## 🔬 Methods
 
-### Death-Birth Moran Process
+### death-Birth Moran process
 
 We simulate evolutionary dynamics using the **death-Birth (dB) update rule**:
 
@@ -63,7 +63,7 @@ We simulate evolutionary dynamics using the **death-Birth (dB) update rule**:
 
 The process runs until the population reaches an **absorbing state** (fixation of one strategy on each layer).
 
-### Absorbing States
+### Absorbing states
 
 | State | Layer 1 | Layer 2 | Interpretation |
 |-------|---------|---------|----------------|
