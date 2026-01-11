@@ -1,13 +1,14 @@
-# Code for: Non-dilemmatic Social Dynamics Promote Cooperation in Multilayer Networks
+# Code for: Non-dilemmatic social dynamics promote cooperation in multilayer networks
 
 Code associated with Non-dilemmatic social dynamics promote cooperation in multilayer network 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)](https://jupyter.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-This repository contains the simulation code and analysis tools accompanying the paper:
-
-> **"Non-dilemmatic social dynamics promote cooperation in multilayer networks"**
+This repository contains the simulation code and analysis tools accompanying the following paper:  
+[Jnanajyoti Bhaumik, Naoki Masuda.  
+Non-dilemmatic social dynamics promote cooperation in multilayer networks.  
+Preprint arXiv:2601.00460](https://arxiv.org/abs/2601.00460):
 
 ---
 
@@ -54,11 +55,11 @@ where $\delta$ is the selection intensity and $b/c$ is the benefit-to-cost ratio
 
 ### Death-Birth Moran Process
 
-We simulate evolutionary dynamics using the **death-birth (dB) update rule**:
+We simulate evolutionary dynamics using the **death-Birth (dB) update rule**:
 
 1. **Death**: Select a random individual to be replaced
 2. **Birth**: A neighbor is chosen proportionally to fitness to reproduce
-3. **Inheritance**: The offspring inherits the parent's strategy
+3. **Copying**: The offspring inherits the parent's strategy
 
 The process runs until the population reaches an **absorbing state** (fixation of one strategy on each layer).
 
@@ -66,15 +67,15 @@ The process runs until the population reaches an **absorbing state** (fixation o
 
 | State | Layer 1 | Layer 2 | Interpretation |
 |-------|---------|---------|----------------|
-| AA | All-C | All-M | Cooperation and mutant type both fixate |
-| AB | All-C | All-R | Cooperation fixates, resident type fixates |
-| BA | All-D | All-M | Defection fixates, mutant type fixates |
-| BB | All-D | All-R | Defection and resident type both fixate |
+| AA | All-C | All-M | Cooperation and the mutant type fixate |
+| AB | All-C | All-R | Cooperation and the resident type fixate |
+| BA | All-D | All-M | Defection and the mutant type fixate |
+| BB | All-D | All-R | Defection and the resident type fixate |
 
-### Update Rule Variants
+### Update rule variants
 
-- **dB-dB**: Death-birth on both layers
-- **dB-Bd**: Death-birth on Layer 1, birth-death on Layer 2
+- **dB-dB**: death-Birth on both layers
+- **dB-Bd**: death-Birth on layer 1, Birth-death on layer 2
 
 ---
 
@@ -90,23 +91,23 @@ pip install numpy networkx matplotlib pandas
 pip install multiprocessing  # (included in Python standard library)
 ```
 
-### Running Simulations
+### Running simulations
 
-#### 1. Fixation Probability Analysis
+#### 1. Fixation probability analysis
 
 ```python
 # Open multilayer_egt.ipynb
 # This notebook computes fixation probabilities across parameter space (b/c, r)
 ```
 
-#### 2. Fixation Time Analysis
+#### 2. Fixation time analysis
 
 ```python
 # Open Fixation_Time.ipynb
 # This notebook estimates mean fixation times via Monte Carlo simulation
 ```
 
-### Quick Example
+### Quick example
 
 ```python
 import numpy as np
@@ -135,31 +136,31 @@ The heatmaps show selection outcomes across the $(b/c, r)$ parameter space:
 
 | Color | Selection Outcome |
 |-------|-------------------|
-| 🟢 **Dark Green** | Both cooperators AND mutants favored |
-| 🟢 **Light Green** | Cooperators favored, mutants neutral/disfavored |
-| 🟠 **Light Coral** | Mutants favored, cooperators neutral/disfavored |
-| 🔴 **Dark Red** | Neither favored |
+| 🟢 **Dark green** | Both cooperators and mutants favored |
+| 🟢 **Light green** | Cooperators favored, mutants neutral/disfavored |
+| 🟠 **Light coral** | Mutants favored, cooperators neutral/disfavored |
+| 🔴 **Dark red** | Neither favored |
 
-### Network Topologies Studied
+### Networks studied
 
-1. **Ring/Cycle Graph**: Regular structure with degree 2
-2. **Heterogeneous Network**: Variable degree distribution
-3. **Complete Graph**: All-to-all connectivity
-4. **Bipartite Graph**: Two-group structure
+1. **Ring/cycle graph**: Regular network with degree 2
+2. **Heterogeneous network**: Heterogeneous degree distribution
+3. **Complete graph**: All-to-all connectivity
+4. **Bipartite graph**: Two-group structure
 
 ---
 
 ## 📁 Data Files
 
-### Heatmap Data Format (.npz)
+### Heatmap data format (.npz)
 
 Each `.npz` file contains:
 - `x_values`: Selection coefficient for cooperators ($\rho_C - 1/N$)
 - `y_values`: Selection coefficient for mutants ($\rho_M - 1/N$)
 
-Positive values indicate the strategy is **favored by selection**.
+Positive values indicate that the strategy is favored by selection.
 
-### Loading Data
+### Loading data
 
 ```python
 import numpy as np
@@ -173,7 +174,7 @@ mutant_selection = data["y_values"]
 
 ## 🛠️ Customization
 
-### Adding New Network Topologies
+### Adding new networks
 
 ```python
 import networkx as nx
@@ -185,7 +186,7 @@ G_custom = nx.watts_strogatz_graph(n=100, k=4, p=0.1)
 results = simulate_multilayer_db(G_custom, G_custom, b=2.0, r=1.1, delta=0.01, num_runs=1000)
 ```
 
-### Parameter Sweeps
+### Parameter sweeps
 
 ```python
 # Example: Sweep over benefit values
