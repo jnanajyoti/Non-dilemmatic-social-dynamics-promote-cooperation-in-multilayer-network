@@ -231,17 +231,24 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-<!-- ## 🤝 Contributing
+## Figure Generation
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+The following table maps each figure in the manuscript to its corresponding notebook:
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
---- -->
+| Figure | Notebook | Description |
+|--------|----------|-------------|
+| Fig. 1 | `Figures and Data/Schematics.ipynb` | Schematic diagrams |
+| Fig. 2 | `Figures and Data/Schematics.ipynb` | Schematic diagrams |
+| Fig. 3 | `Slope Analysis/Enumeration_N6.ipynb`, `Slope Analysis/Slope_Analysis.ipynb` | Slope analysis results |
+| Fig. 4 | `Figures and Data/Figures.ipynb` | Main results |
+| Fig. 5 | `Random Graphs/Figures_Random_graphs.ipynb` | Random graph results |
+| Fig. S1 | `Slope Analysis/Enumeration_N6.ipynb`, `Slope Analysis/Slope_Analysis.ipynb` | Supplementary slope analysis |
+| Fig. S2 | `Figures and Data/Schematics.ipynb` | Supplementary schematics |
+| Fig. S3 | `Random Graphs/Figures_Random_graphs.ipynb` | Supplementary random graph results |
+| Fig. S4 | `Figures and Data/Figures.ipynb` | Supplementary main results |
+| Fig. S5 | `Random Graphs/Figures_Random_graphs.ipynb` | Supplementary random graph results |
+| Fig. S6 | `Random Graphs/Figures_Random_graphs.ipynb` | Supplementary random graph results |
+| Fig. S8 | `Figures and Data/Fixation-time-plots.ipynb` | Fixation time plots |
 
 ## 📧 Contact
 
