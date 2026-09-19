@@ -1,0 +1,7 @@
+y,x,partial_R,p_value
+mean theta_1 - theta_3,clustering,-0.45601727272187637,4.913555713415008e-07
+mean theta_1 - theta_3,mean closeness,-0.6484563815029829,1.4210854715202004e-14
+mean theta_1 - theta_3,mean betweenness,0.6213294899621742,3.4372504842394846e-13
+favorable init count k_coop,clustering,-0.22605495633325684,0.017049236563507986
+favorable init count k_coop,mean closeness,-0.34689451403986676,0.00019155473194976125
+favorable init count k_coop,mean betweenness,0.3327975991444564,0.000358565686826795

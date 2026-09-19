@@ -1,18 +1,21 @@
-# Code for: Non-dilemmatic social dynamics promote cooperation in multilayer networks
+# Code for: Coupling with opinion dynamics promotes prosocial behavior in multilayer networks
 
-Code associated with Non-dilemmatic social dynamics promote cooperation in multilayer network 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
+Code associated with "Coupling with opinion dynamics promotes prosocial behavior in multilayer networks" (earlier preprint title: "Non-dilemmatic social dynamics promote cooperation in multilayer networks").
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)](https://jupyter.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
 
 This repository contains the simulation code and analysis tools accompanying the following paper:  
-[Jnanajyoti Bhaumik, Naoki Masuda.  
-Non-dilemmatic social dynamics promote cooperation in multilayer networks.  
-Preprint arXiv:2601.00460](https://arxiv.org/abs/2601.00460):
+Jnanajyoti Bhaumik, Naoki Masuda.  
+Coupling with opinion dynamics promotes prosocial behavior in multilayer networks.  
+PLOS Computational Biology, in press (2026).  
+Preprint: [arXiv:2601.00460](https://arxiv.org/abs/2601.00460).
+
+The code added during peer review (the analyses reported in Figs A, B, C, G, H, I and Tables A, B of the Supporting Information file S1 Text) is in the folder [`revision/`](revision/README.md).
 
 ---
 
-## 📋 Overview
+## Overview
 
 We study evolutionary dynamics on multilayer networks where individuals participate in two coupled processes:
 
@@ -33,25 +36,33 @@ where $\delta$ is the selection intensity and $b/c$ is the benefit-to-cost ratio
 
 ---
 
-## 🗂️ Repository Structure
+## Repository Structure
 
 ```
 ├── README.md                    # This file
 ├── multilayer_egt.ipynb         # Main analysis: fixation probabilities & phase diagrams
 ├── Fixation_Time.ipynb          # Fixation time simulations
 └── Random Graphs/            # Random Graphs
-    ├── Random_graphs.ipynb       # Code for analysing random graphs
+    ├── Random_Graphs.ipynb       # Code for analysing random graphs
     ├── Figures_Random_graphs.ipynb       # Code for plotting random graphs figures
-    └── *.png, *.pdf             # Publication figures
+    └── *.png                    # Publication figures
+└── Slope Analysis/              # Six-node enumeration and slope analysis
+    ├── Enumeration_N6.ipynb
+    └── Slope_Analysis.ipynb
 └── Figures and Data/            # Generated figures and precomputed data
-    ├── heatmap*_dB_dB.npz       # Heatmap data for dB-dB update rule
-    ├── heatmap*_dB_Bd.npz       # Heatmap data for dB-Bd update rule
-    └── *.png, *.pdf             # Publication figures
+    ├── (heatmap*_dB_dB.npz      # Heatmap data for dB-dB update rule; not included, see Data Files)
+    ├── (heatmap*_dB_Bd.npz      # Heatmap data for dB-Bd update rule; not included, see Data Files)
+    └── *.png                    # Publication figures
+└── revision/                    # Analyses added during peer review (S1 Text: Figs A, B, C, G, H, I; Tables A, B)
+    ├── README.md                # Item-by-item mapping from SI item to script, command, and outputs
+    ├── *.py                     # Python scripts (see revision/README.md)
+    ├── data/empirical_networks/ # Edge lists of the VC7 and LLF two-layer networks
+    └── published_figures/       # The figure files as they appear in S1 Text
 ```
 
 ---
 
-## 🔬 Methods
+## Methods
 
 ### death-Birth Moran process
 
@@ -87,9 +98,12 @@ The process runs until the population reaches an **absorbing state** (fixation o
 # Core dependencies
 pip install numpy networkx matplotlib pandas
 
-# For parallel simulations
-pip install multiprocessing  # (included in Python standard library)
+# Also needed by the code in revision/ (versions in revision/README.md)
+pip install scipy numba
 ```
+
+The parallel simulations use `multiprocessing`, which is part of the Python
+standard library and needs no installation.
 
 ### Running simulations
 
@@ -129,17 +143,17 @@ results = simulate_multilayer_db(G1, G2, b, r, delta, num_runs)
 
 ---
 
-## 📊 Results
+## Results
 
 
 The heatmaps show selection outcomes across the $(b/c, r)$ parameter space:
 
 | Color | Selection Outcome |
 |-------|-------------------|
-| 🟢 **Dark green** | Both cooperators and mutants favored |
-| 🟢 **Light green** | Cooperators favored, mutants neutral/disfavored |
-| 🟠 **Light coral** | Mutants favored, cooperators neutral/disfavored |
-| 🔴 **Dark red** | Neither favored |
+| **Dark green** | Both cooperators and mutants favored |
+| **Light green** | Cooperators favored, mutants neutral/disfavored |
+| **Light coral** | Mutants favored, cooperators neutral/disfavored |
+| **Dark red** | Neither favored |
 
 ### Networks studied
 
@@ -150,9 +164,11 @@ The heatmaps show selection outcomes across the $(b/c, r)$ parameter space:
 
 ---
 
-## 📁 Data Files
+## Data Files
 
 ### Heatmap data format (.npz)
+
+The heatmap `.npz` files read by `Figures and Data/Figures.ipynb` are not included in this repository because of their size (up to about 170 MB each, above GitHub's file-size limit).
 
 Each `.npz` file contains:
 - `x_values`: Selection coefficient for cooperators ($\rho_C - 1/N$)
@@ -172,7 +188,7 @@ mutant_selection = data["y_values"]
 
 ---
 
-## 🛠️ Customization
+## Customization
 
 ### Adding new networks
 
@@ -201,7 +217,7 @@ for b in b_values:
 
 ---
 
-<!-- ## 📖 Citation
+<!-- ## Citation
 
 If you use this code in your research, please cite:
 
@@ -217,7 +233,7 @@ If you use this code in your research, please cite:
 
 ---
 
-## 📚 References
+## References
 
 1. Moran, P. A. P. (1958). Random processes in genetics. *Mathematical Proceedings of the Cambridge Philosophical Society*, 54(1), 60-71.
 
@@ -225,7 +241,7 @@ If you use this code in your research, please cite:
 
 ---
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
 
@@ -242,20 +258,17 @@ The following table maps each figure in the manuscript to its corresponding note
 | Fig. 3 | `Slope Analysis/Enumeration_N6.ipynb`, `Slope Analysis/Slope_Analysis.ipynb` | Slope analysis results |
 | Fig. 4 | `Figures and Data/Figures.ipynb` | Main results |
 | Fig. 5 | `Random Graphs/Figures_Random_graphs.ipynb` | Random graph results |
-| Fig. S1 | `Slope Analysis/Enumeration_N6.ipynb`, `Slope Analysis/Slope_Analysis.ipynb` | Supplementary slope analysis |
-| Fig. S2 | `Figures and Data/Schematics.ipynb` | Supplementary schematics |
-| Fig. S3 | `Random Graphs/Figures_Random_graphs.ipynb` | Supplementary random graph results |
-| Fig. S4 | `Figures and Data/Figures.ipynb` | Supplementary main results |
-| Fig. S5 | `Random Graphs/Figures_Random_graphs.ipynb` | Supplementary random graph results |
-| Fig. S6 | `Random Graphs/Figures_Random_graphs.ipynb` | Supplementary random graph results |
-| Fig. S8 | `Figures and Data/Fixation-time-plots.ipynb` | Fixation time plots |
+| S1 Text Fig D | `Slope Analysis/Enumeration_N6.ipynb`, `Slope Analysis/Slope_Analysis.ipynb` | Supplementary slope analysis |
+| S1 Text Fig E | `Figures and Data/Schematics.ipynb` | Supplementary schematics |
+| S1 Text Fig F | `Random Graphs/Figures_Random_graphs.ipynb` | Supplementary random graph results |
+| S1 Text Fig J | `Figures and Data/Figures.ipynb` | Supplementary main results |
+| S1 Text Fig K | `Random Graphs/Figures_Random_graphs.ipynb` | Supplementary random graph results |
+| S1 Text Fig L | `Random Graphs/Figures_Random_graphs.ipynb` | Supplementary random graph results |
+| S1 Text Fig N | `Figures and Data/Fixation-time-plots.ipynb` | Fixation time plots |
+| S1 Text Figs A, B, C, G, H, I; Tables A, B | `revision/` (see [`revision/README.md`](revision/README.md)) | Analyses added during peer review |
 
-## 📧 Contact
+The image files `Fig. S3.png`, `Fig. S5.png` and `Fig. S6.png` in `Random Graphs/` and `Fig. S4.png` in `Figures and Data/` show Figs F, K, L and J of S1 Text, respectively; their names follow an earlier figure numbering.
+
+## Contact
 
 For questions or collaborations, please open an issue or contact the authors.
-
----
-
-<p align="center">
-  <i>Understanding cooperation through the lens of multilayer networks</i>
-</p>

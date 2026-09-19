@@ -1,0 +1,10 @@
+property           layer 1   layer 2
+------------------------------------
+mean_degree        +0.8551   -0.0402
+max_degree         +0.2840   -0.0388
+var_degree         -0.0806   -0.0144
+mean_closeness     +0.8305   -0.0445
+mean_betweenness   -0.7770   +0.0448
+clustering         +0.2856   -0.0288
+diameter           -0.5317   +0.0363
+alg_conn           +0.7224   -0.0340
